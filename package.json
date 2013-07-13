@@ -13,7 +13,10 @@
     "mime": "~1.2.9",
     "request": "~2.22.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "cleanup": "~0.3.0",
+    "okdone": "~0.3.0"
+  },
   "scripts": {
     "test": "node tests/run.js"
   },
