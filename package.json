@@ -1,0 +1,34 @@
+{
+  "name": "webtouch",
+  "version": "0.0.0",
+  "description": "Validate that a web site and all its required resources are available.",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "async": "~0.2.9",
+    "cheerio": "~0.12.0",
+    "lodash": "~1.3.1",
+    "mime": "~1.2.9",
+    "request": "~2.22.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node tests/run.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mikeal/webtouch"
+  },
+  "keywords": [
+    "web",
+    "touch",
+    "monitoring"
+  ],
+  "author": "Mikeal Rogers <mikeal.rogers@gmail.com>",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/mikeal/webtouch/issues"
+  }
+}
