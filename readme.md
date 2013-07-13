@@ -27,12 +27,12 @@ webtouch('http://www.google.com').on('get', function (url) {console.log("fetchin
 * **`opts`**
   * **`timeout`** A timeout in millisecond for each GET, this is *not* a timeout for the entire crawl.
   * **`img`** Fetch images, defaults to `true`.
-  * **meta** Fetch images in meta tags where `itemprop === "image"`, defaults to `true`.
-  * **script** Fetch scripts, defaults to true.
+  * **`meta`** Fetch images in meta tags where `itemprop === "image"`, defaults to `true`.
+  * **`script`** Fetch scripts, defaults to true.
   * **`a`** Fetch and parse links, defaults to `false`. This method is dangerous since it basically turns webtouch in to a crawler that could potentially never return.
 * **`cb`** `function (error, urls) {}` returns all of the urls that have been touched.
 
 ##### events
 
-* *get* `function (url){}` The url that is about to be touched.
-* *resp* `function (response, url){}` The http.ClientResponse object and url that was just touched.
+* *`get`* `function (url){}` The url that is about to be touched.
+* *`resp`* `function (response, url){}` The http.ClientResponse object and url that was just touched.
