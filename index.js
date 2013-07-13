@@ -71,10 +71,15 @@ function webtouch (urls, opts, cb) {
   if (typeof opts.img === 'undefined') opts.img = true
   if (typeof opts.meta === 'undefined') opts.meta = true
   if (typeof opts.a === 'undefined') opts.a = false
+
+  // defer so that the 'get' event will fire properly
   var parallel = urls.map(function (l) { return function (cb) {touch(l, opts, cb)} })
-  async.parallel(parallel, function (e, urls) {
-    cb(e, _.flatten(urls))
+  setImmediate(function () {
+    async.parallel(parallel, function (e, urls) {
+      cb(e, _.flatten(urls))
+    })
   })
+
   return opts.ee
 }
 
