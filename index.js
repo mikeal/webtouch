@@ -16,7 +16,7 @@ function touch (_url, opts, cb) {
     }
     opts.ee.emit('resp', resp, _url)
     if (resp.statusCode !== 200) return cb(new Error('statusCode is not 200. received '+resp.statusCode+' in '+_url ))
-    if (resp.headers['content-type'].indexOf('text/html') !== 1) {
+    if (resp.headers['content-type'].indexOf('text/html') !== -1) {
       var $ = cheerio.load(body)
         , links = []
         ;
