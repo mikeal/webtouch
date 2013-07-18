@@ -1,6 +1,6 @@
 {
   "name": "webtouch",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "Validate that a web site and all its required resources are available.",
   "main": "index.js",
   "directories": {
