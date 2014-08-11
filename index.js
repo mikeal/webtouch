@@ -8,6 +8,16 @@ var cheerio = require('cheerio')
   , cssParse = require('css-parse')
   ;
 
+function cssURLs (str) {
+  return (str.match(/url\(['"]?[^)]*['"]?\)/gm) || []).
+    map(cssURL).
+    filter(notNull)
+
+  function notNull (str) {
+    return !!str
+  }
+}
+
 function cssURL (str) {
   var pre = str.indexOf('url(')
   if (pre !== -1) {
@@ -56,8 +66,9 @@ function touch (_url, opts, cb) {
       if (rule.declarations) {
         rule.declarations.forEach(function (dec) {
           if (dec.value) {
-            var l = cssURL(dec.value)
-            if (l) links.push(parseUrl(l, _url))
+            cssURLs(dec.value).forEach(function addLink(l) {
+              links.push(parseUrl(l, _url))
+            });
           }
         })
       }
