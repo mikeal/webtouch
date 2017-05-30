@@ -79,7 +79,10 @@ function touch (_url, opts, cb) {
     return links
   }
 
-  request(_url, {timeout:opts.timeout, headers:{accept:mime.lookup(_url, 'text/html')}}, function (e, resp, body) {
+  var headers = opts.headers || {}
+  headers.accept = mime.lookup(_url, 'text/html')
+
+  request(_url, {timeout:opts.timeout, headers:headers}, function (e, resp, body) {
     if (e) {
       e.message += (' in ' + _url)
       return cb(e)
