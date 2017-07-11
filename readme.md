@@ -1,5 +1,7 @@
 ### webtouch
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/mikeal/webtouch.svg)](https://greenkeeper.io/)
+
 `npm install webtouch`
 
 Validate that a web site and all its required resources are available.
